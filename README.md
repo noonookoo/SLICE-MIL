@@ -11,8 +11,6 @@ Official model code for **SLICE-MIL: Counterfactual Semantic Anchoring of Disent
 
 SLICE-MIL is a spatial-logical multiple-instance learning framework for patient-level Child-Pugh grading from portal venous phase CECT. It uses anatomy-driven dual-query attention to decouple intra-hepatic and extra-hepatic signals, then decomposes slice-level embeddings into a compensated basis and stage-specific evidence increments. Counterfactual semantic anchoring regularizes the evidence branches according to the ordinal progression of CP-A, CP-B, and CP-C.
 
-This repository contains the core model architecture and loss implementation only. It does not include private data, checkpoints, preprocessing pipelines, or full training scripts.
-
 ## Method Overview
 
 ```text
@@ -90,14 +88,6 @@ from adda_swin_t import ADDASwinTinyEncoder
 
 The encoder follows a Swin-Tiny hierarchy. Stage 1-3 use standard shifted-window self-attention, while Stage 4 uses anatomy-driven dual-query attention with shared `K` and `V`.
 
-The released implementation follows the original query-mixing behavior:
-
-```python
-q_region_a = WQA(x)
-q_region_b = WQB(x)
-q = q_region_a * m_ex + q_region_b * m_in
-```
-
 ### SLICE-MIL Head
 
 File: `slice_mil_model.py`
@@ -161,27 +151,12 @@ TotalSegmentator can be used to generate liver masks from CT volumes:
 
 ```bash
 pip install TotalSegmentator
-TotalSegmentator -i ct.nii.gz -o segmentations --roi_subset liver
-```
-
-If an explicit extra-hepatic mask is unavailable, construct it from a foreground or body mask:
-
-```text
-m_in = liver_mask
-m_ex = body_or_abdominal_foreground_mask - liver_mask
-```
-
-For body foreground masks:
-
-```bash
-TotalSegmentator -i ct.nii.gz -o body_segmentations --task body
 ```
 
 Official TotalSegmentator repository: <https://github.com/wasserth/TotalSegmentator>
 
 ## Notes
 
-- This repository does not include private data, checkpoints, full preprocessing code, or full training scripts.
 - Every MIL bag must contain at least one valid instance.
 - Counterfactual branches are returned as representations; apply one shared classifier before calling `SLICEMILCounterfactualLoss`.
 - Commercial use requires prior written authorization.
