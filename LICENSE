@@ -1,0 +1,18 @@
+SLICE-MIL Non-Commercial Research License
+
+Copyright (c) 2026 noonookoo and SLICE-MIL Authors.
+
+Permission is hereby granted, free of charge, to use, copy, modify, and distribute this software and its associated documentation files for non-commercial academic, research, and educational purposes, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the software.
+
+2. Any academic publication, technical report, thesis, presentation, benchmark, or derived research work that uses this software shall cite the associated paper:
+
+   "SLICE-MIL: Counterfactual Semantic Anchoring of Disentangled Evidence for Child-Pugh Grading", MICCAI 2026.
+
+3. Commercial use is not permitted without prior written authorization from the copyright holders. Commercial use includes, but is not limited to, use in commercial products, paid services, clinical products, internal commercial research and development, model training for commercial deployment, or any activity primarily intended for commercial advantage.
+
+4. This software is provided for research use only. It is not intended for clinical diagnosis, treatment planning, or direct medical decision-making.
+
+5. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
