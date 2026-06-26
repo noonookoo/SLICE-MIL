@@ -11,6 +11,10 @@ Official model code for **SLICE-MIL: Counterfactual Semantic Anchoring of Disent
 
 SLICE-MIL is a spatial-logical multiple-instance learning framework for patient-level Child-Pugh grading from portal venous phase CECT. It uses anatomy-driven dual-query attention to decouple intra-hepatic and extra-hepatic signals, then decomposes slice-level embeddings into a compensated basis and stage-specific evidence increments. Counterfactual semantic anchoring regularizes the evidence branches according to the ordinal progression of CP-A, CP-B, and CP-C.
 
+<p align="center">
+  <img src="assets/fig1.png" width="95%" alt="SLICE-MIL framework overview">
+</p>
+
 ## Method Overview
 
 ```text
